@@ -1,0 +1,11 @@
+#猜數字遊戲：編寫一個遊戲，電腦隨機選擇一個數字，讓用戶猜這個數字，並根據用戶的輸入給出提示。
+import random
+random_number = random.randint(1,100) #生成一個1到100之間的隨機整數&变量名不能包含空格
+user_guess = None #變量用於存儲用戶的猜測; None在Python中是一個特殊的值，用來表示“無”或“空”。None 在這裡是作為一個初始占位符，用於在遊戲開始前初始化變量，並在遊戲進行過程中進行條件判斷。這是Python中常見的一種做法，尤其在涉及到條件循環和變量初始化時。
+while user_guess != random_number: # 遊戲主循環
+    user_guess = int(input("請猜一個數字（0~100):")) # 獲取用戶輸入，並轉換為整數
+    if user_guess > random_number: # 比較用戶猜測和隨機數字，並給出提示
+        print("太高了，請在猜一次")
+    elif user_guess < random_number:
+        print("太低了，請在猜一次")
+print('恭喜！你猜對了！') # 當用戶猜中數字時，結束循環
